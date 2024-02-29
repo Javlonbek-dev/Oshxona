@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -20,6 +19,8 @@ return new class extends Migration
             $table->string('mobile_number');
             $table->integer('department_id');
             $table->integer('position_id');
+            $table->string('pnfl', 30)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
