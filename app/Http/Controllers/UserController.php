@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\UsersExport;
-use App\Exports\UsersImport;
+use App\Imports\UsersImport;
 use App\Models\Department;
 use App\Models\Employee;
 use App\Models\User;
