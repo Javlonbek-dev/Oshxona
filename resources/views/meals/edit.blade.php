@@ -37,7 +37,6 @@
                                 @error('name')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
-
                             </div>
                             <div class="col-sm-12 mb-3 mt-3 mb-sm-0">
 

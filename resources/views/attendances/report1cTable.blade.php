@@ -64,14 +64,14 @@
         <td class="text-center">--
             {{--                {{ $total['shifts'][$shift->id] }}--}}
         </td>
-        @foreach($shifts as $shKey => $shift)
-            <td class="text-center">
-                {{ '--' }}
-            </td>
-            <td class="text-center">
-                {{ '--' }}
-            </td>
-        @endforeach
+                @foreach($shifts as $shKey => $shift)
+                    <td class="text-center">
+                        {{ '--' }}
+                    </td>
+                    <td class="text-center">
+                        {{ '--' }}
+                    </td>
+                @endforeach
 
     </tr>
     </tfoot>

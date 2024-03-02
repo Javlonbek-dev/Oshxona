@@ -31,33 +31,33 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                        <tr>
-                            <th width="1%">#</th>
-                            <th width="9%">Kodi</th>
-                            <th width="80%">Nomi</th>
-                            <th width="10%"><i class="fa fa-sliders"></i></th>
-                        </tr>
+                            <tr>
+                                <th width="1%">#</th>
+                                <th width="9%">Kodi</th>
+                                <th width="80%">Nomi</th>
+                                <th width="10%"><i class="fa fa-sliders"></i></th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach ($departments as $dKey => $department)
-                            <tr>
-                                <td>{{ ($departments->currentPage() - 1) * $departments->perPage() + $dKey + 1 }}</td>
+                            @foreach ($departments as $dKey => $department)
+                                <tr>
+                                    <td>{{ ($departments->currentPage() - 1) * $departments->perPage() + $dKey + 1 }}</td>
 
-                                <td>{{ $department->code }}</td>
-                                <td>{{ $department->name }}</td>
+                                    <td>{{ $department->code }}</td>
+                                    <td>{{ $department->name }}</td>
 
-                                <td style="display: flex; padding: 0">
-                                    <a href="{{ route('departments.edit', ['department' => $department->id]) }}"
-                                       class="btn btn-primary m-2">
-                                        <i class="fa fa-pen"></i>
-                                    </a>
-                                    <a class="btn btn-danger delete-model m-2" href="#"
-                                       onclick="loadDeleteModal({{ $department->id }})">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
+                                    <td style="display: flex; padding: 0">
+                                        <a href="{{ route('departments.edit', ['department' => $department->id]) }}"
+                                            class="btn btn-primary m-2">
+                                            <i class="fa fa-pen"></i>
+                                        </a>
+                                        <a class="btn btn-danger delete-model m-2" href="#"
+                                           onclick="loadDeleteModal({{ $department->id }})">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -83,3 +83,4 @@
         }
     </script>
 @endsection
+

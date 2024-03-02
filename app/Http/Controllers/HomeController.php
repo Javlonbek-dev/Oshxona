@@ -3,18 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Rules\MatchOldPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
         if (!auth()->check()) {
@@ -24,18 +34,11 @@ class HomeController extends Controller
         return view('home');
     }
 
-
     public function getProfile()
     {
         return view('profile');
     }
 
-    /**
-     * Update Profile
-     * @param $profileData
-     * @return Boolean With Success Message
-     * @author Shani Singh
-     */
     public function updateProfile(Request $request)
     {
         #Validations
@@ -67,16 +70,11 @@ class HomeController extends Controller
         }
     }
 
-    /**
-     * Change Password
-     * @param Old Password, New Password, Confirm New Password
-     * @return Boolean With Success Message
-     * @author Shani Singh
-     */
+
     public function changePassword(Request $request)
     {
         $request->validate([
-            'current_password' => ['required', new MatchOldPassword],
+            'current_password' => ['required', new MatchOldPassword()],
             'new_password' => ['required'],
             'new_confirm_password' => ['same:new_password'],
         ]);

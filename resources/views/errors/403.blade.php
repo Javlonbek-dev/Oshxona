@@ -3,59 +3,59 @@
 
     @section('title', 'Ruxsat yo\'q')
 
-    @section('content')
-        <div class="container-fluid">
+@section('content')
+    <div class="container-fluid">
 
-            <!-- 404 Error Text -->
-            <div class="text-center">
-                <div class="error mx-auto" data-text="403">403</div>
-                <p class="lead text-gray-800 mb-5">Ruxsat yo'q!</p>
-                <p class="text-gray-500 mb-0">Sizga bu sahifasni ko'rish uchun ruxsat berilmagan</p>
-                <a href="{{ route('home') }}">← Asosiy oynaga qaytish</a>
-            </div>
-
+        <!-- 404 Error Text -->
+        <div class="text-center">
+            <div class="error mx-auto" data-text="403">403</div>
+            <p class="lead text-gray-800 mb-5">Ruxsat yo'q!</p>
+            <p class="text-gray-500 mb-0">Sizga bu sahifasni ko'rish uchun ruxsat berilmagan</p>
+            <a href="{{ route('home') }}">← Asosiy oynaga qaytish</a>
         </div>
-    @endsection
+
+    </div>
+@endsection
 @endauth
 
 @guest
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-        <style type="text/css">
-            body {
-                margin-top: 150px;
-                background-color: #C4CCD9;
-            }
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            margin-top: 150px;
+            background-color: #C4CCD9;
+        }
 
-            .error-main {
-                background-color: #fff;
-                box-shadow: 0px 10px 10px -10px #5D6572;
-            }
+        .error-main {
+            background-color: #fff;
+            box-shadow: 0px 10px 10px -10px #5D6572;
+        }
 
-            .error-main h1 {
-                font-weight: bold;
-                color: #444444;
-                font-size: 100px;
-                text-shadow: 2px 4px 5px #6E6E6E;
-            }
+        .error-main h1 {
+            font-weight: bold;
+            color: #444444;
+            font-size: 100px;
+            text-shadow: 2px 4px 5px #6E6E6E;
+        }
 
-            .error-main h6 {
-                color: #42494F;
-            }
+        .error-main h6 {
+            color: #42494F;
+        }
 
-            .error-main p {
-                color: #9897A0;
-                font-size: 14px;
-            }
+        .error-main p {
+            color: #9897A0;
+            font-size: 14px;
+        }
 
-        </style>
-    </head>
+    </style>
+</head>
 
-    <body>
+<body>
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-6 offset-lg-3 col-sm-6 offset-sm-3 col-12 p-3 error-main">
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-    </body>
+</body>
 
-    </html>
+</html>
 @endguest

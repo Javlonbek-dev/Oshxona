@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('meal_schedule', function (Blueprint $table) {
+        Schema::create('meal_schedules', function (Blueprint $table) {
             $table->id();
             $table->integer('meal_id');
             $table->date('date');

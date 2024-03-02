@@ -31,31 +31,31 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                        <tr>
-                            <th width="1%">#</th>
-                            <th width="89%">Nomi</th>
-                            <th width="10%"><i class="fa fa-sliders"></i></th>
-                        </tr>
+                            <tr>
+                                <th width="1%">#</th>
+                                <th width="89%">Nomi</th>
+                                <th width="10%"><i class="fa fa-sliders"></i></th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach ($positions as $pKey => $position)
-                            <tr>
-                                <td>{{ ($positions->currentPage() - 1) * $positions->perPage() + $pKey + 1 }}</td>
+                            @foreach ($positions as $pKey => $position)
+                                <tr>
+                                    <td>{{ ($positions->currentPage() - 1) * $positions->perPage() + $pKey + 1 }}</td>
 
-                                <td>{{ $position->name }}</td>
+                                    <td>{{ $position->name }}</td>
 
-                                <td style="display: flex; padding: 0">
-                                    <a href="{{ route('positions.edit', ['position' => $position->id]) }}"
-                                       class="btn btn-primary m-2">
-                                        <i class="fa fa-pen"></i>
-                                    </a>
-                                    <a class="btn btn-danger delete-model m-2" href="#"
-                                       onclick="loadDeleteModal({{ $position->id }})">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
+                                    <td style="display: flex; padding: 0">
+                                        <a href="{{ route('positions.edit', ['position' => $position->id]) }}"
+                                            class="btn btn-primary m-2">
+                                            <i class="fa fa-pen"></i>
+                                        </a>
+                                        <a class="btn btn-danger delete-model m-2" href="#"
+                                           onclick="loadDeleteModal({{ $position->id }})">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -81,3 +81,4 @@
         }
     </script>
 @endsection
+
