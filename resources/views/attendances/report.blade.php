@@ -40,69 +40,69 @@
                     <div class="table-responsive">
                         @csrf
                         @if(count($employees) > 0)
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>F.I.Sh.</th>
+                                <th>Bo'lim nomi</th>
+                                @foreach($shifts as $shift)
+                                    <th>{{ $shift->name }}</th>
+                                @endforeach
+                                <th>Ishga kelmaganlik sababi</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($employees as $eKey => $employee)
                                 <tr>
-                                    <th>F.I.Sh.</th>
-                                    <th>Bo'lim nomi</th>
-                                    @foreach($shifts as $shift)
-                                        <th>{{ $shift->name }}</th>
-                                    @endforeach
-                                    <th>Ishga kelmaganlik sababi</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach ($employees as $eKey => $employee)
-                                    <tr>
-                                        <td>
-                                            {{ $employee->fullName }}
+                                    <td>
+                                        {{ $employee->fullName }}
+                                        @php
+                                            $shiftIds = [];
+                                            $absenceTypeId = null;
+                                            $absenceTypeName = '';
+                                            foreach($employee->attendances as $attendance)
+                                            {
+                                                $shiftIds[] = $attendance->shift_id;
+                                                $absenceTypeId = $attendance->absence_type_id;
+                                                $absenceTypeName = $attendance?->absenceType?->name;
+                                            }
+                                        @endphp
+
+                                    </td>
+                                    <td>
+                                        {{$employee->department?->name}}
+                                    </td>
+                                    @foreach($shifts as $shKey => $shift)
+                                        <td class="text-center">
                                             @php
-                                                $shiftIds = [];
-                                                $absenceTypeId = null;
-                                                $absenceTypeName = '';
-                                                foreach($employee->attendances as $attendance)
-                                                {
-                                                    $shiftIds[] = $attendance->shift_id;
-                                                    $absenceTypeId = $attendance->absence_type_id;
-                                                    $absenceTypeName = $attendance?->absenceType?->name;
-                                                }
+                                                $checked = '';
+                                                if (!$absenceTypeId && in_array($shift->id, $shiftIds))
+                                                    $checked = 'checked';
+
                                             @endphp
 
-                                        </td>
-                                        <td>
-                                            {{$employee->department?->name}}
-                                        </td>
-                                        @foreach($shifts as $shKey => $shift)
-                                            <td class="text-center">
-                                                @php
-                                                    $checked = '';
-                                                    if (!$absenceTypeId && in_array($shift->id, $shiftIds))
-                                                        $checked = 'checked';
+                                            @if($checked)
+                                                <i class="fa fa-check"></i>
+                                            @endif
 
-                                                @endphp
-
-                                                @if($checked)
-                                                    <i class="fa fa-check"></i>
-                                                @endif
-
-                                                {{--                                            <div class="form-check form-check-inline">--}}
-                                                {{--                                                <input--}}
-                                                {{--                                                    class="{{$employee->id}} form-check-input absence-type-employee-{{$employee->id}}"--}}
-                                                {{--                                                    type="checkbox"--}}
-                                                {{--                                                    {{ $checked }}--}}
-                                                {{--                                                    disabled--}}
-                                                {{--                                                    id="checkbox_{{$shift->id}}"--}}
-                                                {{--                                                    name="attendanceData[{{ $employee->id }}][shifts][{{ $shift->id }}]}}">--}}
-                                                {{--                                            </div>--}}
-                                            </td>
-                                        @endforeach
-                                        <td>
-                                            {{ $absenceTypeName }}
+                                            {{--                                            <div class="form-check form-check-inline">--}}
+                                            {{--                                                <input--}}
+                                            {{--                                                    class="{{$employee->id}} form-check-input absence-type-employee-{{$employee->id}}"--}}
+                                            {{--                                                    type="checkbox"--}}
+                                            {{--                                                    {{ $checked }}--}}
+                                            {{--                                                    disabled--}}
+                                            {{--                                                    id="checkbox_{{$shift->id}}"--}}
+                                            {{--                                                    name="attendanceData[{{ $employee->id }}][shifts][{{ $shift->id }}]}}">--}}
+                                            {{--                                            </div>--}}
                                         </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                                    @endforeach
+                                    <td>
+                                        {{ $absenceTypeName }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                         @else
                             <h5 class="text-center p-3">Tanlangan kun uchun ma'lumot kiritilmagan...</h5>
                         @endif
@@ -149,3 +149,4 @@
         });
     </script>
 @endsection
+

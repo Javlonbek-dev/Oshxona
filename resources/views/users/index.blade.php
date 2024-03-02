@@ -14,11 +14,11 @@
                         <i class="fas fa-plus"></i> Qo'shish
                     </a>
                 </div>
-                {{--                <div class="col-md-6">--}}
-                {{--                    <a href="{{ route('users.export') }}" class="btn btn-sm btn-success">--}}
-                {{--                        <i class="fas fa-check"></i> Export to excel--}}
-                {{--                    </a>--}}
-                {{--                </div>--}}
+{{--                <div class="col-md-6">--}}
+{{--                    <a href="{{ route('users.export') }}" class="btn btn-sm btn-success">--}}
+{{--                        <i class="fas fa-check"></i> Export to excel--}}
+{{--                    </a>--}}
+{{--                </div>--}}
 
             </div>
 

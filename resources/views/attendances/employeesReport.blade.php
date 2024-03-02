@@ -18,7 +18,7 @@
 
             <div>
                 <a class="form-control btn-success"
-                   href='{{ route('attendances.exportEmployeesReport'.`, ['from' => $from, 'to' => $to, 'rows' => 10000000]) `}}'>
+                   href='{{ route('attendances.exportEmployeesReport'`, ['from' => $from, 'to' => $to, 'rows' => 10000000]) `}}'>
                     Excel
                 </a>
             </div>
@@ -62,7 +62,7 @@
 
             </div>
 
-            {{--            {{ json_encode($records->toArray()) }}--}}
+{{--            {{ json_encode($records->toArray()) }}--}}
 
             <div class="card-body">
                 <div class="d-flex mb-2 justify-content-end">
@@ -106,7 +106,7 @@
                             <input type="date" required name="from" value="{{ $from }}" class="form-control">
                             <span class="mx-3"> - </span>
                             <input type="date" required name="to" value="{{ $to }}" class="form-control">
-                            {{--                            send search and department id invisible --}}
+{{--                            send search and department id invisible --}}
                             <input type="hidden" name="search" value="{{ $search }}">
                             <input type="hidden" name="department_id" value="{{ $departmentId }}">
                         </div>

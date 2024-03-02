@@ -40,18 +40,29 @@
                                  alt="" data-image-width="2640" data-image-height="2640" style="margin-left: 37px">
                             <form method="POST" action="{{route('login')}}">
                                 @csrf
-                                <div
-                                    class="u-container-align-center u-container-style u-grey-3 u-group u-radius-50 u-shape-round u-group-2">
-                                    <input type="email" name="email" id="email" style="border-radius: 20px">
+                                <div class="u-container-align-center u-container-style u-grey-3 u-group u-radius-50 u-shape-round u-group-2">
+                                    <input type="email" id="email" style="border-radius: 20px"
+                                           class="form-control form-control-user @error('email') is-invalid @enderror"
+                                           name="email" value="{{ old('email') }}" required autocomplete="email">
                                 </div>
+                                @error('email')
+                                <span class="invalid-feedback" role="alert" style="font-size: 12px; color: red; margin-top: 10px"><strong>{{ $message }}</strong></span>
+                                @enderror
                                 <p class="u-text u-text-1">
                                     <a href=""
                                        class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">Login: </a>
                                 </p>
-                                <div
-                                    class="u-container-align-center u-container-style u-grey-3 u-group u-radius-50 u-shape-round u-group-2">
-                                    <input type="password" name="password" id="password" style="border-radius: 20px">
+
+                                <div class="u-container-align-center u-container-style u-grey-3 u-group u-radius-50 u-shape-round u-group-2">
+                                    <input type="password" name="password" id="password" style="border-radius: 20px"
+                                           class="form-control form-control-user @error('password') is-invalid @enderror"
+                                           required autocomplete="current-password">
+
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert" style="font-size: 12px; color: red;"><strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
+
                                 <p class="u-text u-text-2">
                                     <a href=""
                                        class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">Parol: </a>

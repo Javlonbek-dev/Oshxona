@@ -38,31 +38,31 @@
                             <div class="col-md-4">
                                 <label class="labels">Ism</label>
                                 <input type="text" class="form-control @error('first_name') is-invalid @enderror"
-                                       name="first_name" placeholder="Ismingiz"
-                                       value="{{ old('first_name') ? old('first_name') : auth()->user()->first_name }}">
+                                    name="first_name" placeholder="Ismingiz"
+                                    value="{{ old('first_name') ? old('first_name') : auth()->user()->first_name }}">
 
                                 @error('first_name')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-md-4">
                                 <label class="labels">Familiya</label>
                                 <input type="text" name="last_name"
-                                       class="form-control @error('last_name') is-invalid @enderror"
-                                       value="{{ old('last_name') ? old('last_name') : auth()->user()->last_name }}"
-                                       placeholder="Familiyangiz">
+                                    class="form-control @error('last_name') is-invalid @enderror"
+                                    value="{{ old('last_name') ? old('last_name') : auth()->user()->last_name }}"
+                                    placeholder="Familiyangiz">
 
                                 @error('last_name')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-md-4">
                                 <label class="labels">Telefon raqam</label>
                                 <input type="text" class="form-control @error('mobile_number') is-invalid @enderror" name="mobile_number"
-                                       value="{{ old('mobile_number') ? old('mobile_number') : auth()->user()->mobile_number }}"
-                                       placeholder="Telefon raqam">
+                                    value="{{ old('mobile_number') ? old('mobile_number') : auth()->user()->mobile_number }}"
+                                    placeholder="Telefon raqam">
                                 @error('mobile_number')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -86,21 +86,21 @@
                                 <label class="labels">Joriy parol</label>
                                 <input type="password" name="current_password" class="form-control @error('current_password') is-invalid @enderror" placeholder="Joriy parol" required>
                                 @error('current_password')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-md-4">
                                 <label class="labels">Yangi parol</label>
                                 <input type="password" name="new_password" class="form-control @error('new_password') is-invalid @enderror" required placeholder="Yangi parol">
                                 @error('new_password')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-md-4">
                                 <label class="labels">Yangi parolni tasdiqlang</label>
                                 <input type="password" name="new_confirm_password" class="form-control @error('new_confirm_password') is-invalid @enderror" required placeholder="Tasdiqlang">
                                 @error('new_confirm_password')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>

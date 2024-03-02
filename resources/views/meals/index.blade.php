@@ -31,40 +31,40 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                        <tr>
-                            <th width="1%">#</th>
-                            <th width="70%">Nomi</th>
-                            <th width="10%">Photo</th>
-                            <th width="10%"><i class="fa fa-sliders"></i></th>
-                        </tr>
+                            <tr>
+                                <th width="1%">#</th>
+                                <th width="70%">Nomi</th>
+                                <th width="10%">Photo</th>
+                                <th width="10%"><i class="fa fa-sliders"></i></th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach ($meals as $mKey => $meal)
-                            <tr>
-                                <td>{{ ($meals->currentPage() - 1) * $meals->perPage() + $mKey + 1 }}</td>
+                            @foreach ($meals as $mKey => $meal)
+                                <tr>
+                                    <td>{{ ($meals->currentPage() - 1) * $meals->perPage() + $mKey + 1 }}</td>
 
-                                <td>{{ $meal->name }}</td>
-                                <td class="text-center">
-                                    @if($meal->photo)
-                                        <img src="{{ asset('storage/meals/photos/' . $meal->photo) }}"
-                                             alt="Meal Photo" style="max-width: 100px; max-height: 50px">
-                                    @else
-                                        No photo
-                                    @endif
+                                    <td>{{ $meal->name }}</td>
+                                    <td class="text-center">
+                                        @if($meal->photo)
+                                            <img src="{{ asset('storage/meals/photos/' . $meal->photo) }}"
+                                                 alt="Meal Photo" style="max-width: 100px; max-height: 50px">
+                                        @else
+                                            No photo
+                                        @endif
 
-                                </td>
-                                <td style="display: flex;">
-                                    <a href="{{ route('meals.edit', ['meal' => $meal->id]) }}"
-                                       class="btn btn-primary m-2">
-                                        <i class="fa fa-pen"></i>
-                                    </a>
-                                    <a class="btn btn-danger delete-model m-2" href="#"
-                                       onclick="loadDeleteModal({{ $meal->id }})">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
+                                    </td>
+                                    <td style="display: flex;">
+                                        <a href="{{ route('meals.edit', ['meal' => $meal->id]) }}"
+                                            class="btn btn-primary m-2">
+                                            <i class="fa fa-pen"></i>
+                                        </a>
+                                        <a class="btn btn-danger delete-model m-2" href="#"
+                                           onclick="loadDeleteModal({{ $meal->id }})">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -90,3 +90,4 @@
         }
     </script>
 @endsection
+

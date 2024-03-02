@@ -1,0 +1,14 @@
+/* Add this CSS to center the table in the middle of the page */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the container height to 100% of the viewport height */
+}
+
+.center-table {
+    margin-top: 20px; /* Add some top margin for spacing */
+}
+.bootstrap-datetimepicker-widget .datepicker-days table tbody tr:hover {
+    background-color: #eee;
+}

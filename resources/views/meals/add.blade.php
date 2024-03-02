@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-sm-12 mb-3 mt-3 mb-sm-0">
 
-                                <label for="description">Tavsif:</label>
+                            <label for="description">Tavsif:</label>
                                 <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
 
                                 @error('description')

@@ -31,33 +31,33 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                        <tr>
-                            <th width="1%">#</th>
-                            <th width="70%">Nomi</th>
-                            <th width="19%">Boshlanish va yakunlanish vaqtlari</th>
-                            <th width="10%"><i class="fa fa-sliders"></i></th>
-                        </tr>
+                            <tr>
+                                <th width="1%">#</th>
+                                <th width="70%">Nomi</th>
+                                <th width="19%">Boshlanish va yakunlanish vaqtlari</th>
+                                <th width="10%"><i class="fa fa-sliders"></i></th>
+                            </tr>
                         </thead>
                         <tbody>
-                        @foreach ($shifts as $shKey => $shift)
-                            <tr>
-                                <td>{{ ($shifts->currentPage() - 1) * $shifts->perPage() + $shKey + 1 }}</td>
+                            @foreach ($shifts as $shKey => $shift)
+                                <tr>
+                                    <td>{{ ($shifts->currentPage() - 1) * $shifts->perPage() + $shKey + 1 }}</td>
 
-                                <td>{{ $shift->name }}</td>
-                                <td>{{ $shift->begin_date }} <br> {{ $shift->end_date }}</td>
+                                    <td>{{ $shift->name }}</td>
+                                    <td>{{ $shift->begin_date }} <br> {{ $shift->end_date }}</td>
 
-                                <td style="display: flex;">
-                                    <a href="{{ route('shifts.edit', ['shift' => $shift->id]) }}"
-                                       class="btn btn-primary m-2">
-                                        <i class="fa fa-pen"></i>
-                                    </a>
-                                    <a class="btn btn-danger delete-model m-2" href="#"
-                                       onclick="loadDeleteModal({{ $shift->id }})">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
+                                    <td style="display: flex;">
+                                        <a href="{{ route('shifts.edit', ['shift' => $shift->id]) }}"
+                                            class="btn btn-primary m-2">
+                                            <i class="fa fa-pen"></i>
+                                        </a>
+                                        <a class="btn btn-danger delete-model m-2" href="#"
+                                           onclick="loadDeleteModal({{ $shift->id }})">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -83,3 +83,4 @@
         }
     </script>
 @endsection
+
