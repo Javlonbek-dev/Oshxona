@@ -10,8 +10,8 @@ class DepartmentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('role:Admin');
+//        $this->middleware('auth');
+//        $this->middleware('role:Admin');
     }
 
     public function index()

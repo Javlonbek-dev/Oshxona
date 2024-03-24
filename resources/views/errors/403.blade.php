@@ -1,5 +1,5 @@
 @auth
-    @extends('layouts.app')
+    @extends('layouts.app1')
 
     @section('title', 'Ruxsat yo\'q')
 
