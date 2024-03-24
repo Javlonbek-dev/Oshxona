@@ -45,9 +45,8 @@ class DashboardController extends Controller
                 'meals' => $meals,
             ];
         }
-//        $days = new LengthAwarePaginator($days, count($days), 5);
 
 //        return view('dashboard', compact('selectedDate', 'days', 'weeks'));
-        return view('auth.login', compact('selectedDate', 'days', 'weeks'));
+        return view('auth.login2', compact('selectedDate', 'days', 'weeks'));
     }
 }
