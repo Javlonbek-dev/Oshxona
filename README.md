@@ -30,7 +30,7 @@ Ton Hong Oshxona is Admin Panel With Preset of Roles, Permissions, ACL, User Man
 Install Ton Hong Oshxona With Simple Steps
 
 ```bash
-git clone https://github.com/mahkis/tong-hong-oshxona.git
+https://github.com/Javlonbek-dev/Oshxona.git
 cd tong-hong-oshxona
 ```
 
